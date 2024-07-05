@@ -1,11 +1,14 @@
 pipeline {
-  agent any
+    agent any
 
-  stages {
-    stage('Hello World') {
-      steps {
-        echo 'Hello git'
-      }
-    }
+  triggers {
+      githubPush()
   }
+  stages {
+        stage('Hello World') {
+            steps {
+                echo 'Hello git'
+            }
+        }
+    }
 }
